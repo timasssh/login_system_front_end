@@ -1,0 +1,6 @@
+{
+    "/api/notas": {
+        "status": 200,
+        "message": "Olá, Mundo (mock Api)!"
+    }
+}
