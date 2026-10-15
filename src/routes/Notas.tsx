@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react"
 
-type message = {
-    status: number,
-    message: string
-}
+import type Post from "./types/Post";
+import { PostsList } from "./components/PostsList";
+
+import style from "./styles/Notas.module.css"
 
 export function Notas() {
-    const [message, setMessage] = useState<message | undefined>();
+    const [posts, setPosts] = useState<Post[]>([]);
 
     useEffect(
         () => {
-            fetch("/api/notas")
+            fetch("/api/posts")
                 .then(response => response.json())
-                .then(response => setMessage(response.data))
+                .then(response => setPosts(response.data as Array<Post>))
                 .catch(error => console.log(error));
         }, []);
     
-    return <>
+    return <main className={style.main}>
         <h1>Notas</h1>
-        <h3>{message === undefined ? "carregando..." : message.message}</h3>
-    </>
+        <PostsList />
+    </main>
 }
