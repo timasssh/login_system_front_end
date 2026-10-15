@@ -16,7 +16,7 @@ function App() {
         </span>
         <nav>
           <Link className={style.navLink} to="">Home</Link>
-          <Link className={style.navLink} to="login">Login</Link>
+          <Link className={style.navLink} to="/login">Login</Link>
           <Link className={style.navLink} to="/notas">Notas</Link>
         </nav>
       </header>

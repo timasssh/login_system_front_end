@@ -1,4 +1,6 @@
-import style from "./styles/Login.module.css"
+import style from "./styles/Login_SignIn.module.css"
+
+import { Link } from "react-router-dom"
 
 export function Login() {
     return <main>
@@ -11,5 +13,6 @@ export function Login() {
             
             <input type="submit" value="enviar" />
         </form>
+        <Link to="/cadastro">Não tem conta? Cadastre-se</Link>
     </main>
 }
